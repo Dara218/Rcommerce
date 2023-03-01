@@ -1,0 +1,9 @@
+.start-btn{
+    transition: all 0.4s ease-in !important;
+    width: 250px;
+}
+
+.start-btn:hover{
+    color:darkcyan !important;
+    width: 300px !important;
+}
