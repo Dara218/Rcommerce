@@ -7,3 +7,18 @@
     color:darkcyan !important;
     width: 300px !important;
 }
+
+/* Carousel image */
+.carousel-item .d-block{
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; */
+    height: 100vh;
+    background-size:cover;
+    margin-top: -230px;
+}
+
+.carousel-caption{
+    margin-top: -100px !important;
+}

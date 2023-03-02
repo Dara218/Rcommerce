@@ -1,7 +1,7 @@
 <x-layout>
     <div class="d-flex align-items-center justify-content-center min-vh-100 bg-light">
 
-        <form action="{{ route('createUser') }}" method="POST" class="border px-3 py-3 rounded w-100 my-5 bg-white" style="max-width: 600px">
+        <form action="{{ route('user.create') }}" method="POST" class="border px-3 py-3 rounded w-100 my-5 bg-white" style="max-width: 600px">
             @csrf
 
             <div class="mb-3 d-flex flex-column gap-3">
@@ -10,28 +10,40 @@
 
                 <div class="form-container">
                     <label for="firstname" class="form-label">First Name</label>
-                    <input type="text" class="form-control" name="firstname" placeholder="Enter your firstname">
+                    <input type="text" class="form-control" name="firstname" placeholder="Enter your firstname" value="{{ old('firstname') }}">
                 </div>
 
                 @error('firstname')
-                    <p class="text-danger font-bold">{{ 'Enter your first name.' }}</p>
+                    <p class="text-danger fw-bold">{{ $message }}</p>
                 @enderror
 
                 <div class="form-container">
                     <label for="lastname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" name="lastname" placeholder="Enter your lastname">
+                    <input type="text" class="form-control" name="lastname" placeholder="Enter your lastname" value="{{ old('lastname') }}">
                 </div>
+
+                @error('lastname')
+                    <p class="text-danger fw-bold">{{ $message }}</p>
+                @enderror
 
                 <div class="form-container">
                     <label for="email" class="form-label">Email</label>
 
-                    <input type="email" class="form-control" name="email" placeholder="Enter your email address">
+                    <input type="email" class="form-control" name="email" placeholder="Enter your email address" value="{{ old('email') }}">
                 </div>
+
+                @error('email')
+                    <p class="text-danger fw-bold">{{ $message }}</p>
+                @enderror
 
                 <div class="form-container">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" name="username" placeholder="Enter your username">
+                    <input type="text" class="form-control" name="username" placeholder="Enter your username" value="{{ old('username') }}">
                 </div>
+
+                @error('username')
+                    <p class="text-danger fw-bold">{{ $message }}</p>
+                @enderror
 
                 <div class="form-container">
                     <label for="password" class="form-label">Password</label>
@@ -42,6 +54,10 @@
                     <label for="password_confirmation" class="form-label">Re-type password</label>
                     <input type="password" class="form-control" name="password_confirmation" placeholder="Re-enter your password">
                 </div>
+
+                @error('password')
+                    <p class="text-danger fw-bold">{{ $message }}</p>
+                @enderror
 
                 {{-- <div class="form-container">
                     <label for="" class="form-label">Mobile Number</label>
